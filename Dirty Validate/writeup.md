@@ -1,12 +1,12 @@
 # Dirty Validate
 
 Question:
----
+
 To keep my server from doing a lot of work, I made javascript do the heavy lifting of checking a user's password
 https://challenges.neverlanctf.com:1135
----
+
 How I solved the challenge
----
+
 
 ![alt text](https://imgur.com/Eex0X7H)
 
@@ -33,4 +33,3 @@ Dr. Whom
 ZmxhZ3tEMG4ndF83cnVzN19KU30=
 
 With a base64 decoder I got the passwords in plain text thus obtaining the flag: flag{D0n't_7rus7_JS}
----
