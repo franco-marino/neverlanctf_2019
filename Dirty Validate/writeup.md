@@ -1,10 +1,10 @@
 # Dirty Validate
----
+
 Question:
 ---
 To keep my server from doing a lot of work, I made javascript do the heavy lifting of checking a user's password
 https://challenges.neverlanctf.com:1135
-
+---
 How I solved the challenge
 ---
 
@@ -14,9 +14,9 @@ How I solved the challenge
 I started with simple tests like "admin: admin" or "admin: weak". I noticed that the error message was generated every time a letter was written, which made me think that a request was made to the server and I checked the requests made by the page through the developers tool
 
 
-![alt text][https://imgur.com/TBCjwOD]
+![alt text](https://imgur.com/TBCjwOD)
 
-![alt text][https://imgur.com/DyrcTFs]
+![alt text](https://imgur.com/DyrcTFs)
 
 
 get_username.php file allows us to obtain the list of available users. Then I tried to do the same with the password field getting the password in base64 of the respective user. Getting this result:
