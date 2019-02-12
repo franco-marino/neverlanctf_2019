@@ -2,34 +2,28 @@
 
 Question:
 
-To keep my server from doing a lot of work, I made javascript do the heavy lifting of checking a user's password
-https://challenges.neverlanctf.com:1135
+A user accidentally installed malware on theri computer and now the user database is unavailable.Can yout recover the data and thr flag?
+[Attached file]
 
 How I solved the challenge
 
+I started by analyzing the content with *xxd* obtaining a base64 as the hexadecimal output
+    xxd -r -p users_db > dump
 
-![alt text](https://imgur.com/Eex0X7H)
+Very simply with the command
+    base64 -d dump > decoded
 
+I got plain text. it was enough to look for the string "flag {"
 
-I started with simple tests like "admin: admin" or "admin: weak". I noticed that the error message was generated every time a letter was written, which made me think that a request was made to the server and I checked the requests made by the page through the developers tool
+    grep "flag{" decoded
 
-
-![alt text](https://imgur.com/TBCjwOD)
-
-![alt text](https://imgur.com/DyrcTFs)
-
-
-get_username.php file allows us to obtain the list of available users. Then I tried to do the same with the password field getting the password in base64 of the respective user. Getting this result:
-
-JimmyOneShoe
-V3JvbmcgdXNlcg==
+And this is the flag: 
+![alt text](https://i.imgur.com/hDHwZKC.png) 
 
 
-Mr. Clean
-bm90IHRoaXMgb25lIGVpdGhlci4uLg0K
+Everything could be done with a single command
+    xxd -r -p users_db | base64 -d | grep "flag{"
 
+## Flag
 
-Dr. Whom
-ZmxhZ3tEMG4ndF83cnVzN19KU30=
-
-With a base64 decoder I got the passwords in plain text thus obtaining the flag: flag{D0n't_7rus7_JS}
+flag{ENC0D1NG_D4TA_1S_N0T_ENCRY7I0N}
