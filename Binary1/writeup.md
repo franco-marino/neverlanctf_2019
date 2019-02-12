@@ -8,9 +8,11 @@ A user accidentally installed malware on theri computer and now the user databas
 How I solved the challenge
 
 I started by analyzing the content with *xxd* obtaining a base64 as the hexadecimal output
+
     xxd -r -p users_db > dump
 
 Very simply with the command
+
     base64 -d dump > decoded
 
 I got plain text. it was enough to look for the string "flag {"
