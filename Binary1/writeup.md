@@ -17,11 +17,13 @@ I got plain text. it was enough to look for the string "flag {"
 
     grep "flag{" decoded
 
-And this is the flag: 
+And this is the flag:
+
 ![alt text](https://i.imgur.com/hDHwZKC.png) 
 
 
 Everything could be done with a single command
+
     xxd -r -p users_db | base64 -d | grep "flag{"
 
 ## Flag
