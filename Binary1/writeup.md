@@ -2,7 +2,7 @@
 
 ## Question:
 
-A user accidentally installed malware on theri computer and now the user database is unavailable.Can yout recover the data and thr flag?
+A user accidentally installed malware on theri computer and now the user database is unavailable.Can you recover the data and the flag?
 [Attached file]
 
 ## How I solved the challenge
